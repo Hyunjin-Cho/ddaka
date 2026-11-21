@@ -8,7 +8,7 @@
 
 **한국어** · [English](#english) · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [繁體中文](README.zh-Hant.md)
 
-> **기준일:** 2026-11-20
+> **기준일:** 2026-11-21
 > **상태:** **v1.3 공개 배포 중** — [Releases](https://github.com/Hyunjin-Cho/ddaka/releases)에서 받을 수 있습니다 (앱·DMG 모두 Apple 공증 완료)
 
 <!-- 🔒 2026-09-22 (PR #1 리뷰 F-3): 이 상태 줄과 아래 "v1.1부터는 …" 문장은 반드시 같이 움직인다.
@@ -134,7 +134,7 @@ macOS 기본 앱 '단축어' 검색 (보라색배경 아이콘)
 이제 **⌘⇧9** → 확인창에서 **예** → 청소 시작, 청소 중 **⌘⇧9** → 종료.
 
 - 청소 중에 누른 ⌘⇧9 는 닦아가 먼저 받습니다. 단축어가 닦아를 다시 켜는 일은 없습니다
-  (macOS 27.0 · 단축어 10.0 에서 실행 기록으로 확인. 단축어 앱은 macOS 12부터 있지만 그 아래 버전은 확인하지 못했습니다)
+  (macOS 27.0 · 단축어 10.0 에서 실행 기록으로 확인했습니다)
 - 다른 키를 걸어도 켜는 건 되지만, **끄는 키는 언제나 ⌘⇧9** 입니다
 
 <!-- 2026-09-25 오너 결정: 감사 문구를 절 맨 위 굵은 글씨에서 절 끝 인용 박스로 옮기고, 무엇을 제안했는지 붙였다.
@@ -175,7 +175,7 @@ macOS 기본 앱 '단축어' 검색 (보라색배경 아이콘)
 - 화면이 작아도 탈출 버튼이 잘리지 않도록 배치를 비례 축소합니다 (모니터를 여럿 쓰면서 작은
   보조 화면이 섞이는 구성 대비)
 - **두 번 실행되지 않도록 막아 두었습니다.** 차단하는 앱이 둘이면 탈출 단축키를 눌러도 하나만 꺼지고
-  나머지가 계속 막기 때문입니다. macOS 27에서 동작을 확인했고 그 아래 버전은 확인하지 못했습니다 —
+  나머지가 계속 막기 때문입니다. macOS 27에서 동작을 확인했습니다.
   설령 막히지 않더라도 위의 자동 해제 장치들이 각 인스턴스마다 그대로 돌아갑니다
 
 ## 문제가 생겼을 때 (로그)
@@ -235,7 +235,11 @@ v1.2부터 닦아는 청소가 **어떻게 끝났는지**를 macOS 로그에 남
 - 입력 모니터링(Input Monitoring) 권한 — 키 입력을 가로채려면 손쉬운 사용과 **별도로** 필요합니다
 
 > 배포본에서 실제로 확인한 값입니다 — 두 아키텍처 모두 최소 버전 `12.0`, 아키텍처 `x86_64 arm64`.
-> 다만 **개발·검증은 macOS 27에서 했고, 12~26 실기기에서는 확인하지 못했습니다.**
+> 개발·검증은 macOS 26, 27에서 진행했습니다.
+
+<!-- 2026-11-21 오너 (#46): README 에는 "확인하지 못했다"를 적지 않는다 — 다른 버전에서 어떤지는 써 본 사람들이 알려 주면 된다.
+     개발·검증한 버전만 적는다. 같은 날 단축어·두 번 실행 문장의 "그 아래 버전은 확인하지 못했습니다"도 뺐다(5개 언어 모두).
+     계기: 카페 댓글로 2019 인텔 맥북프로 · macOS 14.8.7 에서 잘 동작한다는 제보가 왔다. -->
 
 ## 라이선스
 
@@ -260,7 +264,7 @@ v1.2부터 닦아는 청소가 **어떻게 끝났는지**를 macOS 로그에 남
 
 [한국어](#korean) · **English** · [日本語](README.ja.md) · [简体中文](README.zh-Hans.md) · [繁體中文](README.zh-Hant.md)
 
-> **As of:** 2026-11-20
+> **As of:** 2026-11-21
 > **Status:** **v1.3 is out** — get it from [Releases](https://github.com/Hyunjin-Cho/ddaka/releases) (both the app and the DMG are notarized by Apple)
 
 A macOS utility that **blocks the whole keyboard** while it runs, so keys you press by accident
@@ -346,8 +350,7 @@ Make that shortcut **⌘⇧9** and the start key and the quit key become the sam
 Now **⌘⇧9** → **Start** in the confirmation → cleaning starts; **⌘⇧9** while cleaning → it quits.
 
 - A ⌘⇧9 pressed during cleaning reaches ddaka first, so Shortcuts never launches it again
-  (confirmed from the run logs on macOS 27.0 with Shortcuts 10.0. Shortcuts has shipped since macOS 12, but
-  earlier versions have not been verified)
+  (confirmed from the run logs on macOS 27.0 with Shortcuts 10.0)
 - Any other key can start it too, but **the quit key is always ⌘⇧9**
 
 <!-- 2026-09-25: credit added to mirror the Korean section (owner decision). -->
@@ -381,7 +384,7 @@ independent mechanisms are layered on top of each other.
 - The escape button is shown on **every display**, so it is reachable wherever your mouse is
 - The layout scales down proportionally so the escape button is never clipped on small screens
 - **A second instance is prevented.** With two blockers running, the escape shortcut would quit only
-  one and the other would keep blocking. Verified on macOS 27; not verified below that — and even if
+  one and the other would keep blocking. Verified on macOS 27. Even if
   it were not prevented, every automatic release above still runs per instance
 
 ## If something goes wrong (logs)
@@ -437,8 +440,7 @@ source. Adding a string with a language missing **fails the build**, so none can
 - Input Monitoring permission — intercepting key input needs this **separately** from Accessibility
 
 > These are verified against the shipping build: minimum version `12.0` and architectures
-> `x86_64 arm64` for both slices. Note that **development and testing were done on macOS 27; 12
-> through 26 have not been verified on real hardware.**
+> `x86_64 arm64` for both slices. Development and testing were done on macOS 26 and 27.
 
 ## License
 
